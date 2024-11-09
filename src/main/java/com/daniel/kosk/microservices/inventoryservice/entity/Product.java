@@ -1,5 +1,7 @@
 package com.daniel.kosk.microservices.inventoryservice.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,7 +26,7 @@ public class Product {
     private int stockQuantity;
     @Column(nullable = false)
     private String imagePath;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String producerCode;
     @Column(nullable = false)
     private double weight;
