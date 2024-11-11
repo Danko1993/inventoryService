@@ -1,6 +1,5 @@
 package com.daniel.kosk.microservices.inventoryservice.dto;
-import com.daniel.kosk.microservices.inventoryservice.entity.Category;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -13,8 +12,7 @@ public record ProductDto(
         @NotBlank(message = "Description must be provided.")
         String description,
         @NotNull(message = "Category must be provided.")
-        @JsonIgnore
-        Category category,
+        String categoryName,
         @NotNull(message = "Price must be provided.")
         Double price,
         @NotNull(message = "Stock quantity must be provided.")

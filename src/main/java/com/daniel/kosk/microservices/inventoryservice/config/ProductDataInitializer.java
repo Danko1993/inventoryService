@@ -88,21 +88,21 @@ public class ProductDataInitializer implements CommandLineRunner {
         );
 
         List<String> imagePaths = Arrays.asList(
-                "src\\resources\\static\\photos\\power_tools_cordless_drill.jpg",
-                "src\\resources\\static\\photos\\power_tools_circular_saw.jpg",
-                "src\\resources\\static\\photos\\power_tools_angle_grinder.jpg",
-                "src\\resources\\static\\photos\\power_tools_impact_wrench.jpg",
-                "src\\resources\\static\\photos\\power_tools_hammer_drill.jpg",
-                "src\\resources\\static\\photos\\hand_tools_hand_saw.jpg",
-                "src\\resources\\static\\photos\\hand_tools_screwdriver_set.jpg",
-                "src\\resources\\static\\photos\\hand_tools_measuring_tape.jpg",
-                "src\\resources\\static\\photos\\hand_tools_utility_knife.jpg",
-                "src\\resources\\static\\photos\\hand_tools_hammer.jpg",
-                "src\\resources\\static\\photos\\pneumatic_tools_air_compressor.jpg",
-                "src\\resources\\static\\photos\\pneumatic_tools_nail_gun.jpg",
-                "src\\resources\\static\\photos\\pneumatic_tools_pneumatic_wrench.jpg",
-                "src\\resources\\static\\photos\\pneumatic_tools_pneumatic_drill.jpg",
-                "src\\resources\\static\\photos\\pneumatic_tools_spray_gun.jpg"
+                "C:\\uploads\\photos\\power_tools_cordless_drill.jpg",
+                "C:\\uploads\\photos\\power_tools_circular_saw.jpg",
+                "C:\\uploads\\photos\\power_tools_angle_grinder.jpg",
+                "C:\\uploads\\photos\\power_tools_impact_wrench.jpg",
+                "C:\\uploads\\photos\\power_tools_hammer_drill.jpg",
+                "C:\\uploads\\photos\\hand_tools_hand_saw.jpg",
+                "C:\\uploads\\photos\\hand_tools_screwdriver_set.jpg",
+                "C:\\uploads\\photos\\hand_tools_measuring_tape.jpg",
+                "C:\\uploads\\photos\\hand_tools_utility_knife.jpg",
+                "C:\\uploads\\photos\\hand_tools_hammer.jpg",
+                "C:\\uploads\\photos\\pneumatic_tools_air_compressor.jpg",
+                "C:\\uploads\\photos\\pneumatic_tools_nail_gun.jpg",
+                "C:\\uploads\\photos\\pneumatic_tools_pneumatic_wrench.jpg",
+                "C:\\uploads\\photos\\pneumatic_tools_pneumatic_drill.jpg",
+                "C:\\uploads\\photos\\pneumatic_tools_spray_gun.jpg"
         );
 
 
