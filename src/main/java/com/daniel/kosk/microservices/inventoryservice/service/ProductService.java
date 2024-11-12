@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -85,7 +86,34 @@ public class ProductService {
         return new ResponseEntity<>(new ResponseDto("Product saved successfully."), HttpStatus.CREATED);
     }
 
+    public ResponseEntity<ApiResponseDto> updateProductData(UUID productId, ProductDto productDto) {
+        Optional<Product> existingProductOpt = productRepository.findById(productId);
 
+        if (existingProductOpt.isEmpty()) {
+            return new ResponseEntity<>(new ResponseDto("Product not found."), HttpStatus.NOT_FOUND);
+        }
+        log.info("Updating product with ID: {}", productId);
+        Product existingProduct = existingProductOpt.get();
+
+
+        existingProduct.setName(productDto.name());
+        existingProduct.setDescription(productDto.description());
+        existingProduct.setPrice(productDto.price());
+        existingProduct.setWeight(productDto.weight());
+        existingProduct.setBrand(productDto.brand());
+        existingProduct.setModel(productDto.model());
+        existingProduct.setCurrency(productDto.currency());
+
+
+       try {
+           productRepository.save(existingProduct);
+       }
+       catch (Exception e){
+           log.error(e.getMessage());
+       }
+
+        return new ResponseEntity<>(new ResponseDto("Product updated successfully."), HttpStatus.OK);
+    }
 
 
 }

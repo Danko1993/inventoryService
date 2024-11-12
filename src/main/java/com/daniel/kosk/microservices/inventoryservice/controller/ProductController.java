@@ -62,8 +62,6 @@ public class ProductController {
             return new ResponseEntity<>(new ResponseDto("File not sent."),HttpStatus.BAD_REQUEST);
         }
         try {
-            
-
             return productService.addProduct(productDto,file);
         }catch (ExpiredJwtException e){
             log.error("Expired JWT token", e);
@@ -72,6 +70,30 @@ public class ProductController {
             return new ResponseEntity<>(new ResponseDto(e.getMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+
+    }
+
+    @PatchMapping("/update-product-data")
+    public ResponseEntity<ApiResponseDto> updateProductData(
+            @RequestParam UUID productId,
+            @RequestBody ProductDto productDto,BindingResult result) {
+        log.info("Starting updating product data");
+        if (result.hasErrors() && result != null) {
+            log.error(result.getAllErrors().toString());
+            return returnValidationErrors(result);
+        }
+        if (productId == null){
+            log.error("Product id is null");
+            return new ResponseEntity<>(new ResponseDto("Product id is null"),HttpStatus.BAD_REQUEST);
+        }
+        try {
+            return productService.updateProductData(productId,productDto);
+        }catch (ExpiredJwtException e){
+            log.error("Expired JWT token", e);
+            return new ResponseEntity<>(new ResponseDto("JWT expired."),HttpStatus.UNAUTHORIZED);
+        }catch (Exception e){
+            return new ResponseEntity<>(new ResponseDto(e.getMessage()),HttpStatus.INTERNAL_SERVER_ERROR);
+        }
 
     }
 
